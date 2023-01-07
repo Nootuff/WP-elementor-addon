@@ -19,21 +19,9 @@
 /**
  * Adding a custom category
  */
-
- /*public*/ /*function add_elementor_widget_categories($elements_manager) {
-
-	$elements_manager->add_category (
-	  'b2w_category',
-	  [
-		'title' => __('Bootstrap to WordPress','elementor-addon'),
-		'icon' => 'eicon-nerd',
-	  ]
-	);
- 
-  } */
-
-
-  function add_elementor_widget_categories( $elements_manager ) {
+  function add_elementor_widget_categories( $elements_manager ) { /*Creates a custom category named 
+	custom-widgets, name can be placed in category section of a new widget to place that widget in this category on 
+	the sidebar.*/
 
 	$elements_manager->add_category(
 		'custom-widgets',
@@ -51,7 +39,6 @@
 	); */
 
 }
-
 
 function register_hello_world_widget( $widgets_manager ) {
 
