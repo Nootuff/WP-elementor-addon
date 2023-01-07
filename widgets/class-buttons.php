@@ -5,28 +5,34 @@
 
 class B2w_Buttons_Widget extends \Elementor\Widget_Base {
 
-	public function get_name() {
+//Find out what to put in these fields here: https://developers.elementor.com/docs/widgets/widget-data/
+
+	public function get_name() { //This name is just used in the code.
     return 'b2w_buttons';
   }
 
-	public function get_title() {
+	public function get_title() { //This is the name that will actually show up in the elements sidebar
     return __( 'Elementor Button Test', 'elementor-addon' );
   }
 
-	public function get_icon() {
+	public function get_icon() { /*This is a string, eicon is an icon library like fontawesome. method is an optional, 
+    but recommended, method. It lets you set the widget icon. You can use any 
+    Elementor icons (https://elementor.github.io/elementor-icons/) or 
+    FontAwesome icons , to simply return the CSS class name. */
     return 'eicon-button';
   }
 
-  public function get_keywords() {
-    return [ 'b2w', 'button', 'link', 'ui', 'cta', 'happy' ];
+  public function get_keywords() { /*Assign keywords to the widget that will help you 
+    find it when you use the widget search field*/
+    return [ 'b2w', 'button', 'link', 'ui', 'cta' ];
   }
 
 	/*public function get_categories() { //Can you create your own category?
     return ['b2w_category'];
   }*/
 
-  public function get_categories() {
-    return [ 'basic' ];
+  public function get_categories() { 
+  return [ /*'basic' */ 'custom-widgets' ];
 }
 
 	protected function _register_controls() {

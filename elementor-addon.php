@@ -15,6 +15,44 @@
     exit; //Exit if accessed directly
 }*/
 
+
+/**
+ * Adding a custom category
+ */
+
+ /*public*/ /*function add_elementor_widget_categories($elements_manager) {
+
+	$elements_manager->add_category (
+	  'b2w_category',
+	  [
+		'title' => __('Bootstrap to WordPress','elementor-addon'),
+		'icon' => 'eicon-nerd',
+	  ]
+	);
+ 
+  } */
+
+
+  function add_elementor_widget_categories( $elements_manager ) {
+
+	$elements_manager->add_category(
+		'custom-widgets',
+		[
+			'title' => esc_html__( 'My Custom Widgets', 'elementor-addon' ),
+			'icon' => 'fa fa-plug',
+		]
+	);
+	/*$elements_manager->add_category(
+		'second-category',
+		[
+			'title' => esc_html__( 'Second Category', 'textdomain' ),
+			'icon' => 'fa fa-plug',
+		]
+	); */
+
+}
+
+
 function register_hello_world_widget( $widgets_manager ) {
 
 	require_once( __DIR__ . '/widgets/hello-world-widget-1.php' );
@@ -25,4 +63,6 @@ function register_hello_world_widget( $widgets_manager ) {
 	$widgets_manager->register( new \Elementor_Hello_World_Widget_2() );
     $widgets_manager->register( new \B2w_Buttons_Widget() );
 }
+
 add_action( 'elementor/widgets/register', 'register_hello_world_widget' );
+add_action( 'elementor/elements/categories_registered', 'add_elementor_widget_categories' );

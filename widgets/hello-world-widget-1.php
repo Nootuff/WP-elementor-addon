@@ -10,11 +10,11 @@ class Elementor_Hello_World_Widget_1 extends \Elementor\Widget_Base {
 	}
 
 	public function get_icon() {
-		return 'eicon-code';
+		return 'eicon-font';
 	}
 
 	public function get_categories() {
-		return [ 'basic' ];
+		return [ 'custom-widgets' ];
 	}
 
 	public function get_keywords() {
