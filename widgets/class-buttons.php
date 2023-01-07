@@ -38,7 +38,7 @@ class B2w_Buttons_Widget extends \Elementor\Widget_Base
 
   public function get_categories()
   {
-    return [ /*'basic' */'custom-widgets'];
+    return [ /*'basic' */'custom-widgets']; //your custom category
   }
 
   protected function _register_controls()
