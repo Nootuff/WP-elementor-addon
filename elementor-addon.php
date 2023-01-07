@@ -46,11 +46,13 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/widgets/hello-world-widget-2.php' );
     require_once( __DIR__ . '/widgets/class-buttons.php' );
 	require_once( __DIR__ . '/widgets/class-title.php' );
+	require_once( __DIR__ . '/widgets/class-color-link.php' );
 
 	$widgets_manager->register( new \Elementor_Hello_World_Widget_1() );
 	$widgets_manager->register( new \Elementor_Hello_World_Widget_2() );
     $widgets_manager->register( new \B2w_Buttons_Widget() );
 	$widgets_manager->register( new \Class_Title_Widget() );
+	$widgets_manager->register( new \Color_Link_Widget() );
 	
 }
 

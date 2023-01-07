@@ -32,10 +32,6 @@ class B2w_Buttons_Widget extends \Elementor\Widget_Base
     return ['b2w', 'button', 'link', 'ui', 'cta'];
   }
 
-  /*public function get_categories() { //Can you create your own category?
-  return ['b2w_category'];
-  }*/
-
   public function get_categories()
   {
     return [ /*'basic' */'custom-widgets']; //your custom category
@@ -73,7 +69,7 @@ class B2w_Buttons_Widget extends \Elementor\Widget_Base
       [
         'label' => __('Button Link', 'elementor-addon'),
         'type' => \Elementor\Controls_Manager::URL,
-        'show_external' => true,
+        'is_external' => true,
         'default' => [
           'url' => '#',
           'is_external' => true,
