@@ -1,16 +1,16 @@
 <?php
 /**
- * B2W Button Widget
+ *  Button Widget
  */
 
-class B2w_Buttons_Widget extends \Elementor\Widget_Base
+class Buttons_Widget extends \Elementor\Widget_Base
 {
 
   //Find out what to put in these fields here: https://developers.elementor.com/docs/widgets/widget-data/
 
   public function get_name()
   { //This name is just used in the code.
-    return 'b2w_buttons';
+    return 'buttons';
   }
 
   public function get_title()
@@ -29,7 +29,7 @@ class B2w_Buttons_Widget extends \Elementor\Widget_Base
   public function get_keywords()
   { /*Assign keywords to the widget that will help you 
    find it when you use the widget search field*/
-    return ['b2w', 'button', 'link', 'ui', 'cta'];
+    return ['button', 'link', 'ui', 'cta'];
   }
 
   public function get_categories()
@@ -41,7 +41,7 @@ class B2w_Buttons_Widget extends \Elementor\Widget_Base
   { //More info here: https://developers.elementor.com/docs/controls/control-values/
 // More info on control types here:  https://developers.elementor.com/docs/editor-controls/control-types/ 
     $this->start_controls_section(
-      'b2w_buttons',
+      'buttons_controls',
       [
         'label' => __('Button', 'elementor-addon'),
         'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
@@ -164,4 +164,4 @@ class B2w_Buttons_Widget extends \Elementor\Widget_Base
 
 
 // Register widget
-\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \B2w_Buttons_Widget()); //Notice the name is the same as the class up above.
+\Elementor\Plugin::instance()->widgets_manager->register_widget_type(new \Buttons_Widget()); //Notice the name is the same as the class up above.

@@ -8,7 +8,8 @@
  * Text Domain: elementor-addon
  */
 
- //$plugin_images = plugin_dir_url(__FILE__) . 'assets/images'; /*the . is concatenation */
+ $plugin_images = plugin_dir_url(__FILE__) . 'assets/images'; /*the . is concatenation, this allows you to use 
+ images from that folder in you widgets. */
 
  /*if (!defined('ABSPATH')) { /*Some kind of security protection, if anyone tries to run this code outside of a wordpress 
 	interface, the program just exits?
@@ -48,13 +49,17 @@ function register_hello_world_widget( $widgets_manager ) {
 	require_once( __DIR__ . '/widgets/class-title.php' );
 	require_once( __DIR__ . '/widgets/class-color-link.php' );
 	require_once( __DIR__ . '/widgets/class-info-text-card.php' );
+	require_once( __DIR__ . '/widgets/class-call-to-action.php' );
 
 	$widgets_manager->register( new \Elementor_Hello_World_Widget_1() );
 	$widgets_manager->register( new \Elementor_Hello_World_Widget_2() );
-    $widgets_manager->register( new \B2w_Buttons_Widget() );
+    $widgets_manager->register( new \Buttons_Widget() );
 	$widgets_manager->register( new \Class_Title_Widget() );
 	$widgets_manager->register( new \Color_Link_Widget() );
 	$widgets_manager->register( new \Info_Text_Card_Widget() );
+
+
+
 
 }
 

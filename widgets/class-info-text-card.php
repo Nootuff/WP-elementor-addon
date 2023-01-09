@@ -35,6 +35,8 @@ class Info_Text_Card_Widget extends \Elementor\Widget_Base
 
     protected function _register_controls()
     {
+        global $plugin_images; /*This php variable is from the main file, allows you to use images from the assets/ 
+        images folder. */
 
         $this->start_controls_section(
             'text_info',
@@ -51,7 +53,7 @@ class Info_Text_Card_Widget extends \Elementor\Widget_Base
                 'label_block' => true,
                 'type' => \Elementor\Controls_Manager::TEXT,
                 'placeholder' => __('Title', 'elementor-addon'),
-                'default' => __('Enter Your Title Here', 'elementor-addon'),
+                'default' => __('PLaceholder Title Here', 'elementor-addon'),
             ]
         );
 
@@ -72,7 +74,10 @@ class Info_Text_Card_Widget extends \Elementor\Widget_Base
                 'label' => __('Choose Image', 'elementor-addon'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
                 'default' => [
-                    'url' => \Elementor\Utils::get_placeholder_image_src(),
+                    /*'url' => \Elementor\Utils::get_placeholder_image_src(), //This is the Elementor function for  
+                    getting a default placeholder image, if you want a custom placeholder then link one in as 
+                    seen below. */
+                    'url' => $plugin_images . '/card-css.png',
                 ],
             ]
         );
@@ -93,6 +98,7 @@ class Info_Text_Card_Widget extends \Elementor\Widget_Base
 
     protected function render()
     {
+        global $plugin_images;
         $settings = $this->get_settings_for_display();
 
         echo '<div class="text-card style-1">';
